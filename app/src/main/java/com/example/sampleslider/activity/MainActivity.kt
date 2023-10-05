@@ -24,10 +24,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupCarousel() {
         val carouselAnimator = CarouselAnimator(this)
-        binding.carousel.inAnimation = carouselAnimator.slideIn
-        binding.carousel.outAnimation = carouselAnimator.slideOut
-        binding.carousel.adapter = CarouselAdapter(carouselList)
-        binding.carousel.flipInterval = TIME_TO_FLIP
-        binding.carousel.startFlipping()
+
+        binding.carousel.apply {
+            inAnimation = carouselAnimator.slideIn
+            outAnimation = carouselAnimator.slideOut
+            adapter = CarouselAdapter(carouselList)
+            flipInterval = TIME_TO_FLIP
+        }.startFlipping()
     }
 }
